@@ -8,7 +8,7 @@ Why do we replicate state/data?
 
 But:
 
-- higher cost
+- higher cost(expensive)
 - hard to keep state consistent
 
 Informally, a replicated storage system is *strongly consistent* when you cannot tell that the data is replicated.
@@ -35,9 +35,9 @@ On a read, the primary just returns the value to the client without consulting w
 
 How well does it match our replication criteria?
 
-- [x] fault tolerance
-- [ ] data locality
-- [ ] dividing work
+- ✅ fault tolerance
+- ❌ data locality
+- ❌ dividing work
 
 Chain Replication
 -----------------
@@ -52,9 +52,9 @@ Reads go to the tail.
 
 Well, how well does it do?
 
-- [x] fault tolerance
-- [~] data locality
-- [x] dividing work
+- ✅ fault tolerance
+- 😒 data locality
+- 😊 dividing work
     - slightly better - reads and writes go to different processes
 
 .. data:: throughput
